@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { MyP } from "./hooks/context/context";
+import Providers from "./provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,8 +26,10 @@ export default function RootLayout({ children }) {
     >
       <MyP>
         <body className="min-h-full flex flex-col">
-
-          {children}</body>
+          <Providers>
+            {children}
+          </Providers>
+        </body>
       </MyP>
 
     </html>
